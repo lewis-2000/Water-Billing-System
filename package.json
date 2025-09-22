@@ -1,0 +1,55 @@
+{
+  "name": "water-billing-system",
+  "version": "1.0.0",
+  "repository": "https://github.com/lewis-2000/Water-Billing-System.git",
+  "author": "Lewis Ng'ang'a <flammylewis4@gmail.com>",
+  "license": "MIT",
+  "main": "src/electron/main.js",
+  "scripts": {
+    "dev:web": "vite",
+    "dev:electron": "cross-env NODE_ENV=development electron .",
+    "dev": "concurrently \"yarn dev:web\" \"wait-on http://localhost:5173 && yarn dev:electron\"",
+    "build:web": "vite build",
+    "build:electron": "cross-env NODE_ENV=production electron-builder --win --x64",
+    "build": "yarn build:web && yarn build:electron",
+    "postinstall": "electron-rebuild -f -w better-sqlite3"
+  },
+  "build": {
+    "appId": "com.lewis.waterbilling",
+    "productName": "WaterBillingSystem",
+    "directories": {
+      "buildResources": "assets",
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "src/electron/**/*"
+    ],
+    "extraResources": [],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.3.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12",
+    "electron-rebuild": "^3.2.9",
+    "vite": "^7.1.6",
+    "wait-on": "^9.0.0"
+  }
+}

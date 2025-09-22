@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f5f5f5;
+  color: #333;
+  /* padding: 1rem; */
+  height: 100vh;
+  width: 100vw;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* App */
+/* .App-container{
+
+} */
+
+/* Client */
+.client-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  height: 100vh;
+  max-height: 100%;
+  overflow-y: hidden;
+}
+
+/* Side Menu */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #629de2;
+  text-align: left;
+  width: 100%;
+  padding: 0 0.75rem;
+  /* border-bottom: 1px solid #d1ecff; */
+}
+
+.side-menu {
+  width: 240px;
+  background-color: #f6fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  /* position: relative; */
+  padding: 1rem 0;
+  height: 100vh;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+}
+
+.side-menu.collapsed {
+  width: 80px;
+  align-items: center;
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  /* background-color: tomato; */
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  color: gray;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+  background-color: #cfeafe;
+  color: #1e1e2f;
+}
+
+.menu-item.active {
+  color: #000;
+  font-weight: 400;
+}
+
+.menu-item.menu-item.active::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  background-color: #467ed8;
+  margin-top: 10px;
+  border-radius: 1rem;
+}
+
+/* Icon placeholder */
+.menu-item-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.item-name {
+  flex: 1;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 0 1rem;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+/* User Menu */
+.user-menu {
+  width: 240px;
+  background-color: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0;
+  height: 100vh;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+}
+
+/* Home View */
+.home-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  overflow-x: hidden;
+  padding: 1rem 2rem;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+/* Salutations Card */
+.salutations {
+  max-width: 100%;
+  min-width: 30%;
+  height: 250px;
+  background-color: #d1ecff;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.salutations-heading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-left: 1rem;
+}
+
+.salutations-heading .welcome-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d4f91; /* deeper blue */
+  margin: 0;
+}
+
+.salutations-heading .username {
+  color: #0d6efd; /* accent blue */
+}
+
+.salutations-heading .home-quote {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #444;
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* Image */
+.salutations-image {
+  flex: 1;
+  display: flex;
+  padding-right: 25%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.salutations-image img {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Quick Stats Section */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-title {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
