@@ -5,6 +5,7 @@ import BillsView from "../components/views/BillsView";
 import ChangePasswordView from "../components/views/ChangePasswordView";
 import PaymentStatusView from "../components/views/PaymentStatusView";
 import RegistrationView from "../components/views/RegistrationView";
+import UserProfile from "../components/UserProfile";
 
 const Content = ({ activePage }) => {
   const renderPage = () => {
@@ -24,7 +25,7 @@ const Content = ({ activePage }) => {
       case "settings":
         return <h1>Settings Page</h1>;
       case "profile":
-        return <h1>Your Profile</h1>;
+        return <UserProfile />;
       case "logout":
         return <h1>Logging out...</h1>;
       default:
